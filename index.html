@@ -23,16 +23,15 @@
     <div class="container">
       <h1>Task Manager</h1>
       <!--Name-->
-      <form action="">
+      <form action="#">
         <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
+          <label for="InputName">Name</label>
           <input
             type="text"
             class="form-control"
             id="InputName"
-            aria-describedby="enter name"
             placeholder="Enter Name"
-            autocomplete="false"
+            autocomplete="off"
           />
           <br />
         </div>
@@ -46,21 +45,12 @@
       <br />
       <!--Assigned To-->
       <div class="btn-group">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="defaultDropdown"
-          data-bs-toggle="dropdown"
-          data-bs-auto-close="true"
-          aria-expanded="false"
-        >
-          Assigned To
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-          <li><a class="dropdown-item" href="#">Lauren</a></li>
-          <li><a class="dropdown-item" href="#">Norman</a></li>
-          <li><a class="dropdown-item" href="#">Justin</a></li>
-        </ul>
+        <select name="Assignto" id="Assignto" class="form-select">
+          <option value="Norman">Norman</option>
+          <option value="Lauren">Lauren</option>
+          <option value="Justin">Justin</option>
+        </select>
+
         <br />
         <br />
         <!--Due Date-->
@@ -72,22 +62,12 @@
         <!--Status-->
         <br />
         <div class="btn-group">
-          <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="defaultDropdown"
-            data-bs-toggle="dropdown"
-            data-bs-auto-close="true"
-            aria-expanded="false"
-          >
-            Status
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-            <li><a class="dropdown-item" href="#">InProgress</a></li>
-            <li><a class="dropdown-item" href="#">Todo</a></li>
-            <li><a class="dropdown-item" href="#">Review</a></li>
-            <li><a class="dropdown-item" href="#">Done</a></li>
-          </ul>
+          <select name="Assignto" id="Assignto" class="form-select">
+            <option value="Todo">Todo</option>
+            <option value="Inprogress">Inprogress</option>
+            <option value="Review">Review</option>
+            <option value="Complete">Complete</option>
+          </select>
           <br />
 
           <!--Submition of page-->
