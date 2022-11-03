@@ -32,7 +32,7 @@
             id="InputName"
             aria-describedby="enter name"
             placeholder="Enter Name"
-            autocomplete="on"
+            autocomplete="false"
           />
           <br />
         </div>
@@ -41,9 +41,7 @@
       <div>
         <label for="freeform">Desription of Task:</label>
         <br />
-        <textarea id="freeform" name="freeform" rows="4" cols="50">
-          Enter text here...
-        </textarea>
+        <textarea id="freeform" placeholder="Enter text here..." name="freeform" rows="4" cols="50" autocomplete="off"></textarea>
       </div>
       <br />
       <!--Assigned To-->
@@ -59,22 +57,15 @@
           Assigned To
         </button>
         <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-          <li><a class="dropdown-item" href="#">placeholder</a></li>
-          <li><a class="dropdown-item" href="#">placeholder</a></li>
-          <li><a class="dropdown-item" href="#">Menu item</a></li>
+          <li><a class="dropdown-item" href="#">Lauren</a></li>
+          <li><a class="dropdown-item" href="#">Norman</a></li>
+          <li><a class="dropdown-item" href="#">Justin</a></li>
         </ul>
         <br />
         <br />
         <!--Due Date-->
         <div class="calendar">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=46c3558dd9d682b920c73583c16bfcd6825d31a07b50fb7d8d68a9e3159ed323%40group.calendar.google.com&ctz=Australia%2FMelbourne"
-            style="border: 0"
-            width="600"
-            height="600"
-            frameborder="0"
-            scrolling="no"
-          ></iframe>
+          <input type="date" class="form-control">
         </div>
         <br />
 
@@ -92,9 +83,10 @@
             Status
           </button>
           <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
-            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">InProgress</a></li>
+            <li><a class="dropdown-item" href="#">Todo</a></li>
+            <li><a class="dropdown-item" href="#">Review</a></li>
+            <li><a class="dropdown-item" href="#">Done</a></li>
           </ul>
           <br />
 
