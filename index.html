@@ -41,7 +41,14 @@
       <div>
         <label for="freeform">Desription of Task:</label>
         <br />
-        <textarea id="freeform" placeholder="Enter text here..." name="freeform" rows="4" cols="50" autocomplete="off"></textarea>
+        <textarea
+          id="freeform"
+          placeholder="Enter text here..."
+          name="freeform"
+          rows="4"
+          cols="50"
+          autocomplete="off"
+        ></textarea>
       </div>
       <br />
       <!--Assigned To-->
@@ -65,7 +72,7 @@
         <br />
         <!--Due Date-->
         <div class="calendar">
-          <input type="date" class="form-control">
+          <input type="date" class="form-control" />
         </div>
         <br />
 
@@ -88,6 +95,16 @@
             <li><a class="dropdown-item" href="#">Review</a></li>
             <li><a class="dropdown-item" href="#">Done</a></li>
           </ul>
+          <br />
+
+          <label for="status">Status of project:</label>
+          <select name="status" id="status">
+            <option value="toDo">📝 Todo</option>
+            <option value="inProgress">➡️ In Progress</option>
+            <option value="review">👀 Review</option>
+            <option value="done">✅ Done</option>
+          </select>
+
           <br />
 
           <!--Submition of page-->
