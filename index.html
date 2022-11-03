@@ -22,16 +22,49 @@
   <body>
     <div class="container">
       <h1>Task Manager</h1>
+          <!--Modal attempt-->
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      New Task
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Task Manager</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
       <!--Name-->
-      <form action="#">
+      <form action="">
         <div class="form-group">
-          <label for="InputName">Name</label>
+          <label for="exampleInputEmail1">Name</label>
           <input
             type="text"
             class="form-control"
             id="InputName"
+            aria-describedby="enter name"
             placeholder="Enter Name"
-            autocomplete="off"
+            autocomplete="on"
           />
           <br />
         </div>
@@ -42,47 +75,44 @@
         <br />
         <textarea
           id="freeform"
-          placeholder="Enter text here..."
           name="freeform"
           rows="4"
           cols="50"
-          autocomplete="off"
+          placeholder="Enter text here..."
         ></textarea>
       </div>
-      <br />
       <!--Assigned To-->
       <div class="btn-group">
+        <label for="assignTo">Assign to:</label>
         <select name="Assignto" id="Assignto" class="form-select">
+          <option value="noName"></option>
           <option value="Norman">Norman</option>
           <option value="Lauren">Lauren</option>
           <option value="Justin">Justin</option>
         </select>
-
-        <br />
-        <br />
-        <!--Due Date-->
-        <div class="calendar">
-          <input type="date" class="form-control" />
-        </div>
-        <br />
-
-        <!--Status-->
-        <br />
-
+      </div>
+      <br />
+      <br>
+      <!--Due Date-->
+      <div class="calendar">
+        <input type="date" class="form-control" />
+      </div>
+      <!--Status-->
+      <div class="btn-group">
         <label for="status">Status of project:</label>
-        <select name="status" id="status">
+        <select name="status" id="status" class="form-select">
+          <option value="noStatus"></option>
           <option value="toDo">📝 Todo</option>
           <option value="inProgress">➡️ In Progress</option>
           <option value="review">👀 Review</option>
           <option value="done">✅ Done</option>
         </select>
-
-        <br />
-
-        <!--Submition of page-->
-        <div class="submitbutton">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </body>
