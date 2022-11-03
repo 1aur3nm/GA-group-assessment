@@ -78,39 +78,19 @@
 
         <!--Status-->
         <br />
-        <div class="btn-group">
-          <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="defaultDropdown"
-            data-bs-toggle="dropdown"
-            data-bs-auto-close="true"
-            aria-expanded="false"
-          >
-            Status
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-            <li><a class="dropdown-item" href="#">InProgress</a></li>
-            <li><a class="dropdown-item" href="#">Todo</a></li>
-            <li><a class="dropdown-item" href="#">Review</a></li>
-            <li><a class="dropdown-item" href="#">Done</a></li>
-          </ul>
-          <br />
+        <label for="status">Status of project:</label>
+        <select name="status" id="status">
+          <option value="toDo">📝 Todo</option>
+          <option value="inProgress">➡️ In Progress</option>
+          <option value="review">👀 Review</option>
+          <option value="done">✅ Done</option>
+        </select>
 
-          <label for="status">Status of project:</label>
-          <select name="status" id="status">
-            <option value="toDo">📝 Todo</option>
-            <option value="inProgress">➡️ In Progress</option>
-            <option value="review">👀 Review</option>
-            <option value="done">✅ Done</option>
-          </select>
+        <br />
 
-          <br />
-
-          <!--Submition of page-->
-          <div class="submitbutton">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+        <!--Submition of page-->
+        <div class="submitbutton">
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
