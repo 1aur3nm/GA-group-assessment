@@ -1,16 +1,18 @@
+
 .container {
   margin: auto;
   text-align: center;
+  color: rebeccapurple;
 }
 
 .btn-group {
-  flex-direction: column;
+  flex-direction:column;
+  content: center;
+  color: orange;
 }
-
 #freeform {
   margin: auto;
 }
-
-textarea {
-  width: 100%;
+#InputName{
+margin: auto;
 }

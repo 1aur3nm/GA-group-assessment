@@ -26,13 +26,15 @@
       <form action="#">
         <div class="form-group">
           <label for="InputName">Name</label>
-          <input
-            type="text"
+          <input type="text"
+          <textarea
             class="form-control"
             id="InputName"
             placeholder="Enter Name"
             autocomplete="off"
+            style="width: 200px;"
           />
+        </textarea>
           <br />
         </div>
       </form>
@@ -41,12 +43,14 @@
         <label for="freeform">Desription of Task:</label>
         <br />
         <textarea
+        class="form-control"
           id="freeform"
           placeholder="Enter text here..."
           name="freeform"
           rows="4"
           cols="50"
           autocomplete="off"
+          style="width: 400px;"
         ></textarea>
       </div>
       <br />
@@ -70,7 +74,7 @@
         <br />
 
         <label for="status">Status of project:</label>
-        <select name="status" id="status">
+        <select name="status" class="form-select" id="status">
           <option value="toDo">📝 Todo</option>
           <option value="inProgress">➡️ In Progress</option>
           <option value="review">👀 Review</option>
