@@ -12,7 +12,19 @@
 }
 #freeform {
   margin: auto;
+  display: flex;
 }
 #InputName{
-margin: auto;
+  margin: auto;
+display: flex;
+}
+textarea {
+  width: auto;
+  display: flex;
+}
+div.form-control{
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color:teal;
 }
