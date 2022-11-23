@@ -10,6 +10,7 @@
   content: center;
   color: orange;
 }
+
 #freeform {
   margin: auto;
   display: flex;
@@ -22,6 +23,14 @@ textarea {
   width: auto;
   display: flex;
 }
+
+
+li {
+  list-style: none;
+  text-align: center;
+}
+
+
 div.form-control{
   display: flex;
   width: auto;
