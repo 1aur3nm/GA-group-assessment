@@ -6,40 +6,39 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl);
 });
 //<<<<<<< main
-const saveChanges
+//const saveChanges
 document.addEventListener("click", saveChanges);
 function saveChanges() {
   document.getElementsByClassName(btnbtn-primary).addEventListener("click"), saveChanges;
 };
 
-submitButton.addEventListener("click", () => saveChanges);
+saveChanges.addEventListener("click", () => saveChanges);
 const submitButton = document.getElementsByClassName("btn btn-primary")
 
 
 
     ///Form Validation Code
-const validateTaskForm,
-  // validation fails if the input is blank
-  {if:(form.inputfield.value == <"8"); {
-    alert ("Error: Input is empty!")
-    form.inputfield.focus();
-    return false;
-  }
+    function checkName(){
+      var name = $('#InputName').val();
+      var pattern = new RegExp(/^[a-zA-Z ]{5,30}$/);
+      if (!pattern.test(name)) {
+        $('#errorname').html('Should be between 5-30 contains only space');
+        $('#errorname').show(300);
+        error_name = true;
+      }
+      else {
+          $('#errorname').hide(400);
+      }
+    }
+ function checkDescription (){
+  //var checkDescription ; => ({15:});
+ }
+ function AssignedTo (){
+  //var AssignedTo () => ({8});
+ }
+ //function DueDate() {(
 
-  // regular expression to match only alphanumeric characters and spaces
-  var re = /^[\w ]+$/;
-
-  // validation fails if the input doesn't match our regular expression
-  if(!re.test(form.inputfield.value)) {
-    alert("Error: Input contains invalid characters!");
-    form.inputfield.focus();
-    return false;
-  }
-
-  // validation was successful
-  return true;
-;
-
+ //)};
 
 // Adding Day and time
 function formatDateAndTime(timestamp) {
