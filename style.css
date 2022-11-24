@@ -1,4 +1,3 @@
-
 .container {
   margin: auto;
   text-align: center;
@@ -6,7 +5,7 @@
 }
 
 .btn-group {
-  flex-direction:column;
+  flex-direction: column;
   content: center;
   color: orange;
 }
@@ -15,25 +14,32 @@
   margin: auto;
   display: flex;
 }
-#InputName{
+#InputName {
   margin: auto;
-display: flex;
-}
-textarea {
-  width: auto;
   display: flex;
 }
 
+h1 {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+}
 
 li {
   list-style: none;
   text-align: center;
 }
 
+textarea {
+  width: auto;
+  display: flex;
+}
 
-div.form-control{
+div.form-control {
   display: flex;
   width: auto;
   height: auto;
-  background-color:teal;
+  background-color: teal;
 }
