@@ -64,10 +64,16 @@ function formatDateAndTime(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
+
+  //document.body.appendChild(document.createElement('span').newDate.innerHTML = date
+  //document.appendChild(document.createElement('span').newDate.innerHTML = date
+  //document.querySelector("dateAndTime").textContent = date
+  //document.getElementById("dateAndTime").innerHTML = date
+  //document.body.appendChild.getElementById(document."span").newDate.innerHTML = date
+
   console.log(date);
+
   return (date = `${day} ${hours}:${mins}`);
-
-  let newDate = new Date(date);
-  formatDateAndTime(newDate);
+ 
 }
-
+formatDateAndTime(newDate);
