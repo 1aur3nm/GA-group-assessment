@@ -7,8 +7,14 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl);
 });
 //<<<<<<< main
+
+function saveChanges(){
+  console.log("SAVE ME!!!!!! HALP!")
+}
 let saveButton = document.getElementById("saveButton");
-//saveButton.addEventListener("click", () => saveChanges());
+saveButton.addEventListener("click", ()=> {saveChanges()});
+
+
 
 
     ///Form Validation Code

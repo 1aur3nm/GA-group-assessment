@@ -17,11 +17,9 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="./index.js"></script>
     <title>GA - big assesment</title>
   </head>
   <body>
-    
     <div class="container">
       <h1>Task Manager</h1>
       <br>
@@ -30,97 +28,101 @@
       </ul>
       <div id="digital-clock"></div>
 
-<!--Modal attempt-->
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      New Task
-    </button>
+      <!--Modal attempt-->
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        New Task
+      </button>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Task Manager</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Task Manager</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <!--Name-->
+                  <div class="form-group">
+                    <label for="InputName">Name</label>
+                    <input type="text" inputname="required"
+                      class="form-control"
+                      id="InputName"
+                      aria-describedby="enter name"
+                      placeholder="Enter Name"
+                      autocomplete="off"
+                      style="width: 200px;"
+                    />
+                    <br />
+                  </div>
+                <!--Description-->
+                  <div>
+                    <label for="freeform">Desription of Task:</label>
+                    <br />
+                    <textarea
+                      id="freeform"
+                      name="freeform"
+                      rows="4"
+                      cols="50"
+                      placeholder="Enter text here..."
+                    ></textarea>
+                  </div>
+                <!--Assigned To-->
+                  <div class="btn-group">
+                    <label for="assignTo">Assign to:</label>
+                    <select name="Assignto" id="Assignto" class="form-select">
+                      <option value="noName"></option>
+                      <option value="Norman">Norman</option>
+                      <option value="Lauren">Lauren</option>
+                      <option value="Justin">Justin</option>
+                    </select>
+                  </div>
+                  <br />
+                  <br />
+                <!--Due Date-->
+                  <div class="calendar">
+                    <input type="date" class="form-control" />
+                  </div>
+                <!--Status-->
+                  <div class="btn-group">
+                    <label for="status">Status of project:</label>
+                    <select name="status" id="status" class="form-select">
+                      <option value="noStatus"></option>
+                      <option value="toDo">📝 Todo</option>
+                      <option value="inProgress">➡️ In Progress</option>
+                      <option value="review">👀 Review</option>
+                      <option value="done">✅ Done</option>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="saveButton" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <button class="btn btn-primary" id="saveButton">SaveButton </Button>
+                  </div>
+              </form>
+            </div>
           </div>
-          <div class="modal-body">
-      <!--Name-->
-      <form action="">
-        <div class="form-group">
-          <label for="InputName">Name</label>
-          <input type="text" inputname="required"
-            class="form-control"
-            id="InputName"
-            aria-describedby="enter name"
-            placeholder="Enter Name"
-            autocomplete="off"
-            style="width: 200px;"
-          />
-          <br />
         </div>
-      </form>
-      <!--Description-->
-      <div>
-        <label for="freeform">Desription of Task:</label>
-        <br />
-        <textarea
-          id="freeform"
-          name="freeform"
-          rows="4"
-          cols="50"
-          placeholder="Enter text here..."
-        ></textarea>
       </div>
-      <!--Assigned To-->
-      <div class="btn-group">
-        <label for="assignTo">Assign to:</label>
-        <select name="Assignto" id="Assignto" class="form-select">
-          <option value="noName"></option>
-          <option value="Norman">Norman</option>
-          <option value="Lauren">Lauren</option>
-          <option value="Justin">Justin</option>
-        </select>
-      </div>
-      <br />
-      <br>
-      <!--Due Date-->
-      <div class="calendar">
-        <input type="date" class="form-control" />
-      </div>
-      <!--Status-->
-      <div class="btn-group">
-        <label for="status">Status of project:</label>
-        <select name="status" id="status" class="form-select">
-          <option value="noStatus"></option>
-          <option value="toDo">📝 Todo</option>
-          <option value="inProgress">➡️ In Progress</option>
-          <option value="review">👀 Review</option>
-          <option value="done">✅ Done</option>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" id="saveButton" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary" id="saveButton">SaveButton </Button>
-      </div>
-    </div>
+    <script src="./index.js"></script>
   </body>
 </html>
