@@ -1,4 +1,4 @@
-console.log("script loaded")
+
 //Drop Down Elements - Assigned To /  Status
 var dropdownElementList = [].slice.call(
   document.querySelectorAll(".dropdown-toggle")
@@ -7,16 +7,12 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl);
 });
 //<<<<<<< main
-//const saveButton
-document.addEventListener("click", saveButton);
-function saveButton(){}
-  let Save = document.getElementById("saveButton");
-saveButton.addEventListener("click", () => saveButton());
-;
+let saveButton = document.getElementById("saveButton");
+//saveButton.addEventListener("click", () => saveChanges());
 
 
     ///Form Validation Code
-$(function(){
+(function(){
 
   $('#errorname').hide();
   $('#errorDescription').hide();
