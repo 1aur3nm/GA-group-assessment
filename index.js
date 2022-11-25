@@ -1,4 +1,13 @@
+window.addEventListener("load", function(){
+  function displayCards(){
+    let tasks = TaskManager.getAllTasks()
+    JSON.parse(tasks).map(eachTask => {
+      document.getElementById("container").appendChild(document.createElement("div")).innerHTML = `<div id="card"><h4>${eachTask.title}</h4><p>${eachTask.description}</p></div>`
+    })
+  }
+  displayCards()
 
+})
 //Drop Down Elements - Assigned To /  Status
 var dropdownElementList = [].slice.call(
   document.querySelectorAll(".dropdown-toggle")
@@ -8,11 +17,35 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 });
 //<<<<<<< main
 
-function saveChanges(){
-  console.log("SAVE ME!!!!!! HALP!")
+function saveChanges(event){
+  event.preventDefault()
+  let name = event.target.Assignto.value
+  let title = event.target.title.name
+  if (validateForm(event)){
+    let task = new TaskManager(title, name)
+    TaskManger.saveToLocal(task)
+  }
 }
-let saveButton = document.getElementById("saveButton");
-saveButton.addEventListener("click", ()=> {saveChanges()});
+
+let modalForm = document.getElementById("modalForm");
+modalForm.addEventListener("change", (event)=>saveChanges(event));
+
+function validateName(event){
+  let name = event.target.Assignto.value
+  if(name === "" || name.length < 4){
+    alert("PUT IN A NAME DICKHEAD!")
+    return false
+  }
+  return true
+}
+
+function validateForm(event){
+  if (!validateName(event)){
+    return false
+  }
+
+  return true
+}
 
 
 
@@ -140,35 +173,72 @@ saveButton.addEventListener("click", ()=> {saveChanges()});
 
 });
 
-function getDateTime() {
-  var now     = new Date(); 
-  var year    = now.getFullYear();
-  var month   = now.getMonth()+1; 
-  var day     = now.getDate();
-  var hour    = now.getHours();
-  var minute  = now.getMinutes();
-  var second  = now.getSeconds(); 
-  if(month.toString().length == 1) {
-       month = '0'+month;
+// function getDateTime() {
+//   var now     = new Date(); 
+//   var year    = now.getFullYear();
+//   var month   = now.getMonth()+1; 
+//   var day     = now.getDate();
+//   var hour    = now.getHours();
+//   var minute  = now.getMinutes();
+//   var second  = now.getSeconds(); 
+//   if(month.toString().length == 1) {
+//        month = '0'+month;
+//   }
+//   if(day.toString().length == 1) {
+//        day = '0'+day;
+//   }   
+//   if(hour.toString().length == 1) {
+//        hour = '0'+hour;
+//   }
+//   if(minute.toString().length == 1) {
+//        minute = '0'+minute;
+//   }
+//   if(second.toString().length == 1) {
+//        second = '0'+second;
+//   }   
+//   var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
+//    return dateTime;
+// }
+
+// //example usage: realtime clock
+// setInterval(function(){
+//   currentTime = getDateTime();
+//   document.getElementById("dateAndTime").innerHTML = currentTime;
+// }, 1000);
+
+function formatDateAndTime() {
+  let date = new Date();
+
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
   }
-  if(day.toString().length == 1) {
-       day = '0'+day;
-  }   
-  if(hour.toString().length == 1) {
-       hour = '0'+hour;
+
+  let mins = date.getMinutes();
+  if (mins < 10) {
+    mins = `0${mins}`;
   }
-  if(minute.toString().length == 1) {
-       minute = '0'+minute;
-  }
-  if(second.toString().length == 1) {
-       second = '0'+second;
-  }   
-  var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
-   return dateTime;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  console.log(date.toDateString().split(" "))
+  let dayDate = date.toDateString().split(" ")[2]
+  let month = date.getMonth() + 1
+  let year = date.toDateString().split(' ')[3]
+
+  console.log(date);
+  return date = `${day}: ${dayDate}/${month}/${year} - ${hours}:${mins}`;
 }
 
-//example usage: realtime clock
-setInterval(function(){
-  currentTime = getDateTime();
-  document.getElementById("dateAndTime").innerHTML = currentTime;
-}, 1000);
+
+  document.querySelector("#dateAndTime").textContent = formatDateAndTime()
+  // document.getElementById("dateAndTime").innerHTML = date
+
+
