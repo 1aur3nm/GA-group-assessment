@@ -206,6 +206,7 @@ function validateForm(event){
 //   document.getElementById("dateAndTime").innerHTML = currentTime;
 // }, 1000);
 
+//// Time and date
 function formatDateAndTime() {
   let date = new Date();
 
