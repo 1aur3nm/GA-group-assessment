@@ -1,3 +1,14 @@
+window.addEventListener("load", function(){
+  function displayCards(){
+    let tasks = TaskManager.getAllTasks()
+    JSON.parse(tasks).map(eachTask => {
+      document.getElementById("container").appendChild(document.createElement("div")).innerHTML = `<div id="card"><h4>${eachTask.title}</h4><p>${eachTask.description}</p></div>`
+    })
+  }
+  displayCards()
+
+})
+
 //Drop Down Elements - Assigned To /  Status
 var dropdownElementList = [].slice.call(
   document.querySelectorAll(".dropdown-toggle")
@@ -6,43 +17,60 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
   return new bootstrap.Dropdown(dropdownToggleEl);
 });
 //<<<<<<< main
-//const saveChanges
-document.addEventListener("click", saveChanges);
-function saveChanges() {
-  document.getElementsByClassName(btnbtn-primary).addEventListener("click"), saveChanges;
-};
 
-saveChanges.addEventListener("click", () => saveChanges);
-const submitButton = document.getElementsByClassName("btn btn-primary")
+function saveChanges(event){
+  event.preventDefault()
+  let name = event.target.Assignto.value
+  let title = event.target.title.name
+  if (validateForm(event)){
+    let task = new TaskManager(title, name)
+    TaskManger.saveToLocal(task)
+  }
+}
 
+let modalForm = document.getElementById("modalForm");
+modalForm.addEventListener("change", (event)=>saveChanges(event));
 
+  ///Form Validation Code
+function validateName(event){
+  let name = event.target.Assignto.value
+  if(name === "" || name.length < 4){
+    alert("PUT IN A NAME !")
+    return false
+  }
+  return true
+}
 
-    ///Form Validation Code
-    function checkName(){
-      var name = $('#InputName').val();
-      var pattern = new RegExp(/^[a-zA-Z ]{5,30}$/);
-      if (!pattern.test(name)) {
-        $('#errorname').html('Should be between 5-30 contains only space');
-        $('#errorname').show(300);
-        error_name = true;
-      }
-      else {
-          $('#errorname').hide(400);
-      }
-    }
- function checkDescription (){
-  //var checkDescription ; => ({15:});
- }
- function AssignedTo (){
-  //var AssignedTo () => ({8});
- }
- //function DueDate() {(
+function validateForm(event){
+  if (!validateName(event)){
+    return false
+  }
 
- //)};
+  return true
+}
+function description(event){
+  if (description =>15)
+    return true
+    else return false
+}
+function validateAssignTo(event) {
+  if (validateAssignTo < 0 )(event)
+    return false
 
-// Adding Day and time
-function formatDateAndTime(timestamp) {
-  let date = new Date(timestamp);
+  if (validateAssignTo => 1)
+    return true
+}
+function DueDate (event) {
+  if (DueDate < 0) (event)
+  return false
+
+  if (DueDate => 1)
+  return true
+}
+
+//// Time and date
+function formatDateAndTime() {
+  let date = new Date();
 
   let hours = date.getHours();
   if (hours < 10) {
@@ -63,16 +91,17 @@ function formatDateAndTime(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-
-  //document.body.appendChild(document.createElement('span').newDate.innerHTML = date
-  //document.appendChild(document.createElement('span').newDate.innerHTML = date
-  //document.querySelector("dateAndTime").textContent = date
-  //document.getElementById("dateAndTime").innerHTML = date
-  //document.body.appendChild.getElementById(document."span").newDate.innerHTML = date
+  console.log(date.toDateString().split(" "))
+  let dayDate = date.toDateString().split(" ")[2]
+  let month = date.getMonth() + 1
+  let year = date.toDateString().split(' ')[3]
 
   console.log(date);
-
-  return (date = `${day} ${hours}:${mins}`);
- 
+  return date = `${day}: ${dayDate}/${month}/${year} - ${hours}:${mins}`;
 }
-formatDateAndTime(newDate);
+
+
+  document.querySelector("#dateAndTime").textContent = formatDateAndTime()
+  // document.getElementById("dateAndTime").innerHTML = date
+
+
