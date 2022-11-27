@@ -43,3 +43,25 @@ div.form-control {
   height: auto;
   background-color: teal;
 }
+
+/* Cards */
+.card-container {
+  float: left;
+  gap: 10px;
+}
+
+.row {
+  color: violet;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.col {
+  display: inline-block;
+  float: left;
+}
+
+.card {
+  border-color: rgb(184, 144, 23);
+  float: left;
+}
