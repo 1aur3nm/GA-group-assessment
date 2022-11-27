@@ -3,10 +3,10 @@
 ////Add an id attribute to the content list group created in sprint 1 and write the code to add the card to your HTML element
 
 // class name: taskManager
-class taskManager { 
+class taskManager {
     const taskList = [];
     // the objects "setup" | Makes and returns objects
-    constructor taskManagerFunction(name, desription, assign, calendar, status) {
+    constructor (name, desription, assign, calendar, status) {
         this._name = name;
         this._desription = desription;
         this._assign = assign;
@@ -64,8 +64,6 @@ setStatus (newStatus){
 setId (newId){
     this._id = newId;
 }
-
-
 
 }
 //console.log(taskManager.name);
