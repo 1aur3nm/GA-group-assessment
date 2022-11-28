@@ -4,76 +4,75 @@
 
 // class name: taskManager
 class taskManager {
-    static taskList = [];
-    // the objects "setup" | Makes and returns objects
-    constructor (nameOfTask, desription, assign, calendar, status) {
-        this._nameOfTask = nameOfTask;
-        this._desription = desription;
-        this._assign = assign;
-        this._calendar = calendar;
-        this._status = status;
-        this._id = 0;
- }
+  static taskList = [];
+  // the objects "setup" | Makes and returns objects
+  constructor(nameOfTask, desription, assign, calendar, status) {
+    this._nameOfTask = nameOfTask;
+    this._desription = desription;
+    this._assign = assign;
+    this._calendar = calendar;
+    this._status = status;
+    this._id = 0;
+  }
 
- ////Getters
- getNameOfTask(){
-    return this._nameOfTask
- };
+  ////Getters
+  getNameOfTask() {
+    return this._nameOfTask;
+  }
 
- getDesription(){
-    return this._desription
- };
+  getDesription() {
+    return this._desription;
+  }
 
- geAssign(){
-    return this._assign
- };
+  geAssign() {
+    return this._assign;
+  }
 
- getCalendar(){
-    return this._calendar
- };
+  getCalendar() {
+    return this._calendar;
+  }
 
- getStatus(){
-     return this._status
- }
+  getStatus() {
+    return this._status;
+  }
 
- geId(){
-    return this._id
- };
+  geId() {
+    return this._id;
+  }
 
- ////Setters
-setName (newTaskName){
+  ////Setters
+  setName(newTaskName) {
     this._name = newTaskName;
-}
+  }
 
-setDesription (newDesription){
+  setDesription(newDesription) {
     this._desription = newDesription;
-}
+  }
 
-setAssign (newAssign){
+  setAssign(newAssign) {
     this._assign = newAssign;
-}
+  }
 
-setcalendar (newCalendar){
+  setcalendar(newCalendar) {
     this._calendar = newCalendar;
-}
+  }
 
-setStatus (newStatus){
+  setStatus(newStatus) {
     this._status = newStatus;
-}
+  }
 
-setId (newId){
+  setId(newId) {
     this._id = newId;
-}
-
+  }
 }
 //console.log(taskManager.name);
 
-localStorage
+localStorage;
 
 ////To swich from the cards orginal status and make changes
-switch (this._nameOfTask){  
-    case "toGetName";
-    this.setId(toGetName.length);   //to set the id | starting array length
-    toGetName.push(this);          //add the card info to start an array
-    localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-}
+//switch (this._nameOfTask){
+//case "toGetName";
+//this.setId(toGetName.length);   //to set the id | starting array length
+//toGetName.push(this);          //add the card info to start an array
+//localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
+//}
