@@ -3,6 +3,16 @@
 ////Add an id attribute to the content list group created in sprint 1 and write the code to add the card to your HTML element
 
 // class name: taskManager
+localStorage.getitem(getAllTasks)
+JSON.parse
+Array
+function TaskHTML (displayCards)
+
+
+function render(){
+    var render = displayCards
+    displayCards
+}
 
 class taskManager {
     taskList = [];
@@ -66,7 +76,7 @@ setId (newId){
     this._id = newId;
 }
 static getAllTasks (){
-    
+
 }
 }
 export default taskManager
