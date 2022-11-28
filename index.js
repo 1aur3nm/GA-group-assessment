@@ -2,8 +2,9 @@ import TaskManager from "./Classes/TaskManager.js"
 window.addEventListener("load", function(){
   function displayCards(){
     let tasks = TaskManager.getAllTasks()
-    JSON.parse(tasks).map(eachTask => {
-      document.getElementById("container").appendChild(document.createElement("div")).innerHTML = `<div id="card"><h4>${eachTask.title}</h4><p>${eachTask.description}</p></div>`
+    const container = document.getElementById("container")
+    tasks.map(eachTask => {
+      TaskManager.createTaskHTML(eachTask, container)
     })
   }
   displayCards()
