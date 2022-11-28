@@ -65,8 +65,9 @@ setStatus (newStatus){
 setId (newId){
     this._id = newId;
 }
-
+static getAllTasks (){
+    
+}
 }
 export default taskManager
-
 //console.log(taskManager.name);
