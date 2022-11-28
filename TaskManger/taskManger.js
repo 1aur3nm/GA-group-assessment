@@ -6,8 +6,8 @@
 class taskManager {
     const taskList = [];
     // the objects "setup" | Makes and returns objects
-    constructor (name, desription, assign, calendar, status) {
-        this._name = name;
+    constructor (nameOfTask, desription, assign, calendar, status) {
+        this._nameOfTask = nameOfTask;
         this._desription = desription;
         this._assign = assign;
         this._calendar = calendar;
@@ -16,8 +16,8 @@ class taskManager {
  }
 
  ////Getters
- getName(){
-    return this._name
+ getNameOfTask(){
+    return this._nameOfTask
  };
 
  getDesription(){
@@ -41,8 +41,8 @@ class taskManager {
  };
 
  ////Setters
-setName (newName){
-    this._name = newName;
+setName (newTaskName){
+    this._name = newTaskName;
 }
 
 setDesription (newDesription){
@@ -67,3 +67,10 @@ setId (newId){
 
 }
 //console.log(taskManager.name);
+
+////To swich from the cards orginal status and make changes
+switch (this._nameOfTask){
+    case "toGetName";
+    this.setId(toGetName.length);
+    toGetName.push(this);
+}
