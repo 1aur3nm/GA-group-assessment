@@ -1,3 +1,4 @@
+import TaskManager from "./Classes/TaskManager.js"
 window.addEventListener("load", function(){
   function displayCards(){
     let tasks = TaskManager.getAllTasks()
@@ -18,11 +19,19 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 });
 //<<<<<<< main
 
-function saveChanges(event){
+
+
+function validateTaskForm (saveChanges,validateName,validateForm,description,validateAssignTo,DueDate) {
+  if (validateForm){saveChanges}
+  else return Error
+}
+
+
+  function saveChanges(event){
   event.preventDefault()
   let name = event.target.Assignto.value
   let title = event.target.title.name
-  if (validateForm(event)){
+  if (validateForm, validateName, validateAssignTo, description, DueDate(event)){
     let task = new TaskManager(title, name)
     TaskManger.saveToLocal(task)
   }
@@ -66,7 +75,9 @@ function DueDate (event) {
 
   if (DueDate => 1)
   return true
+
 }
+
 
 //// Time and date
 function formatDateAndTime() {
