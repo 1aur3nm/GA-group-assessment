@@ -67,8 +67,6 @@ class taskManager {
 }
 //console.log(taskManager.name);
 
-localStorage;
-
 ////To swich from the cards orginal status and make changes
 //switch (this._nameOfTask){
 //case "toGetName";
