@@ -4,7 +4,7 @@
 
 // class name: taskManager
 class taskManager {
-    const taskList = [];
+    static taskList = [];
     // the objects "setup" | Makes and returns objects
     constructor (nameOfTask, desription, assign, calendar, status) {
         this._nameOfTask = nameOfTask;
@@ -68,9 +68,12 @@ setId (newId){
 }
 //console.log(taskManager.name);
 
+localStorage
+
 ////To swich from the cards orginal status and make changes
-switch (this._nameOfTask){
+switch (this._nameOfTask){  
     case "toGetName";
-    this.setId(toGetName.length);
-    toGetName.push(this);
+    this.setId(toGetName.length);   //to set the id | starting array length
+    toGetName.push(this);          //add the card info to start an array
+    localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
 }
