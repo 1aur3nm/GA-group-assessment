@@ -89,6 +89,10 @@ class TaskManager {
     static render(card, where){
         where.appendChild(card)
     }
+
+    static saveToLocal(obj){
+
+    }
 }
 
 export default TaskManager;

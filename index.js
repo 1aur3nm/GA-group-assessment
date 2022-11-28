@@ -1,5 +1,9 @@
 import TaskManager from "./Classes/TaskManager.js"
 window.addEventListener("load", function(){
+  const name = event.target.Assignto.value
+  const title = event.target.title.name
+  const modalForm = document.getElementById("modalForm");
+  
   function displayCards(){
     let tasks = TaskManager.getAllTasks()
     const container = document.getElementById("container")
@@ -9,7 +13,7 @@ window.addEventListener("load", function(){
   }
   displayCards()
 
-})
+
 
 //Drop Down Elements - Assigned To /  Status
 var dropdownElementList = [].slice.call(
@@ -22,28 +26,24 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 
 
 
-function validateTaskForm (saveChanges,validateName,validateForm,description,validateAssignTo,DueDate) {
-  if (validateForm){saveChanges}
+function validateTaskForm (event) {
+  if (validateForm(event)){saveChanges(event)}
   else return Error
 }
 
 
   function saveChanges(event){
-  event.preventDefault()
-  let name = event.target.Assignto.value
-  let title = event.target.title.name
-  if (validateForm, validateName, validateAssignTo, description, DueDate(event)){
-    let task = new TaskManager(title, name)
-    TaskManger.saveToLocal(task)
+    event.preventDefault()
+    const task = new TaskManager(title, name)
+    TaskManager.saveToLocal(task)
   }
-}
 
-let modalForm = document.getElementById("modalForm");
-modalForm.addEventListener("change", (event)=>saveChanges(event));
+
+modalForm.addEventListener("submit", (event)=>validateTaskForm(event));
 
   ///Form Validation Code
 function validateName(event){
-  let name = event.target.Assignto.value
+  let name = event.target.inputName.value
   if(name === "" || name.length < 4){
     alert("PUT IN A NAME !")
     return false
@@ -58,26 +58,27 @@ function validateForm(event){
 
   return true
 }
-function description(event){
-  if (description =>15)
-    return true
-    else return false
-}
-function validateAssignTo(event) {
-  if (validateAssignTo < 0 )(event)
-    return false
+// function description(event){
+//   if (description <= 15){
+//     return false
+//   }
+//   return true
+// }
+// function validateAssignTo(event) {
+//   if (validateAssignTo < 0 )(event)
+//     return false
 
-  if (validateAssignTo => 1)
-    return true
-}
-function DueDate (event) {
-  if (DueDate < 0) (event)
-  return false
+//   if (validateAssignTo => 1)
+//     return true
+// }
+// function DueDate (event) {
+//   if (DueDate < 0) (event)
+//   return false
 
-  if (DueDate => 1)
-  return true
+//   if (DueDate => 1)
+//   return true
 
-}
+// }
 
 
 //// Time and date
@@ -115,5 +116,5 @@ function formatDateAndTime() {
 
   document.querySelector("#dateAndTime").textContent = formatDateAndTime()
   // document.getElementById("dateAndTime").innerHTML = date
-
+})
 
