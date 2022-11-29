@@ -80,8 +80,8 @@ function validateForm(event){
   }
 
  function validateAssignTo(event) {
-   if (event.target.validateAssignTo < -1 )(event)
-     return false
+   if (!event.target.validateAssignTo.value.length > 0)
+     {return false}
     alert("Task must be Assigned")
 
    if (validateAssignTo => 1)
