@@ -15,6 +15,10 @@ class taskManager {
     this._id = 0;
   }
 
+
+  static getAllTasks() {
+    return JSON.parse(localStorage.getItem("tasks"));
+  }
   ////Getters
   getNameOfTask() {
     return this._nameOfTask;
@@ -63,6 +67,20 @@ class taskManager {
 
   setId(newId) {
     this._id = newId;
+  }
+  static createTaskHTML(obj, where) {
+    const card = document.createElement("div");
+    card.innerHTML = `<h4>${obj.name}</h4>
+                          <p>${obj.description}</p>
+                          <p>${obj.assign}</p>
+                          <p>${obj.calendar}</p>
+                          <p>${obj.status}</p>
+                          `;
+    TaskManager.render(card, where);
+  }
+
+  static getAllTasks() {
+    return JSON.parse(localStorage.getItem("tasks"));
   }
 }
 //console.log(taskManager.name);

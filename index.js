@@ -58,19 +58,24 @@ function validateForm(event){
 
   return true
 }
-// function description(event){
-//   if (description <= 15){
-//     return false
-//   }
-//   return true
-// }
-// function validateAssignTo(event) {
-//   if (validateAssignTo < 0 )(event)
-//     return false
+ function description(event){
+  if (description <= 15){
+    alert("Description Must be More Than 15 Characters")
+    return false
 
-//   if (validateAssignTo => 1)
-//     return true
-// }
+   }
+   return true
+  }
+
+ function validateAssignTo(event) {
+   if (validateAssignTo < 0 )(event)
+     return false
+    alert("Task must be Assigned")
+
+   if (validateAssignTo => 1)
+     return true
+ }
+ 
 // function DueDate (event) {
 //   if (DueDate < 0) (event)
 //   return false
