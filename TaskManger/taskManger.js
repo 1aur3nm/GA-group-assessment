@@ -67,6 +67,7 @@ class taskManager {
   setId(newId) {
     this._id = newId;
   }
+
   static createTaskHTML(obj, where) {
     const card = document.createElement("div");
     card.innerHTML = `<h4>${obj.name}</h4>
@@ -81,12 +82,21 @@ class taskManager {
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
   }
-  
+
   static render(card, where) {
     where.appendChild(card);
   }
 
-  static saveToLocal(obj) {}
+  static saveToLocal(obj) {
+    localStorage.setItem(
+      "task",
+      JSON.stringify(obj)
+    );
+  }
+
+  static getAllTasks () {
+    return
+    JSON.parse(localStorage.getItem("task"));
 }
 //console.log(taskManager.name);
 
