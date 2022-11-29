@@ -3,6 +3,7 @@
 ////Add an id attribute to the content list group created in sprint 1 and write the code to add the card to your HTML element
 
 // class name: taskManager
+
 class taskManager {
   static taskList = [];
   // the objects "setup" | Makes and returns objects
@@ -14,7 +15,7 @@ class taskManager {
     this._status = status;
     this._id = 0;
   }
-
+    
 
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
@@ -83,6 +84,7 @@ class taskManager {
     return JSON.parse(localStorage.getItem("tasks"));
   }
 }
+export default taskManager
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes

@@ -1,7 +1,6 @@
 import TaskManager from "./TaskManger/taskManger.js"
 window.addEventListener("load", function(){
-  const name = event.target.Assignto.value
-  const title = event.target.title.name
+ 
   const modalForm = document.getElementById("modalForm");
   
   function displayCards(){
@@ -11,7 +10,7 @@ window.addEventListener("load", function(){
       TaskManager.createTaskHTML(eachTask, container)
     })
   }
-  displayCards()
+ // displayCards()
 
 
 
@@ -27,15 +26,19 @@ var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
 
 
 function validateTaskForm (event) {
-  if (validateForm(event)){saveChanges(event)}
+  event.preventDefault()
+  if (validateForm(event)){saveChanges(event)
+  }
   else return Error
 }
 
 
   function saveChanges(event){
-    event.preventDefault()
+    const name = event.target.Assignto.value
+    const title = event.target.title.name
     const task = new TaskManager(title, name)
     TaskManager.saveToLocal(task)
+    getElementById("saveButton")
   }
 
 
@@ -55,11 +58,20 @@ function validateForm(event){
   if (!validateName(event)){
     return false
   }
+  if (!description(event)){
+    return false
+  }
+  if (!validateAssignTo(event)){
+    return false
+  }
+  //if (!DueDate(event)){
+  //  return false
+ // }
 
   return true
 }
  function description(event){
-  if (description <= 15){
+  if (event.target.description.value.length < 15){
     alert("Description Must be More Than 15 Characters")
     return false
 
@@ -68,7 +80,7 @@ function validateForm(event){
   }
 
  function validateAssignTo(event) {
-   if (validateAssignTo < 0 )(event)
+   if (event.target.validateAssignTo < -1 )(event)
      return false
     alert("Task must be Assigned")
 
@@ -76,14 +88,20 @@ function validateForm(event){
      return true
  }
 
-// function DueDate (event) {
-//   if (DueDate < 0) (event)
-//   return false
-
-//   if (DueDate => 1)
-//   return true
-
-// }
+ function DueDate (event) {
+  {
+    (day, month, year)
+        var regd = new RegExp("^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})\$");
+        var date = month + "/" + day + "/" + year;
+        var date = new Date(date);
+        var today = new Date();
+        var vdob = regd.test(date);
+        if(date.getDate() != day || (date.getTime()>today.getTime()))
+        {
+                alert("Please select a valid Date.")
+       return false}
+     return true
+ }}
 
 
 //// Time and date
