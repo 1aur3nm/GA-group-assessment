@@ -15,7 +15,7 @@ class taskManager {
     this._status = status;
     this._id = 0;
   }
-    
+
 
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
@@ -69,6 +69,7 @@ class taskManager {
   setId(newId) {
     this._id = newId;
   }
+
   static createTaskHTML(obj, where) {
     const card = document.createElement("div");
     card.innerHTML = `<h4>${obj.name}</h4>
@@ -83,8 +84,23 @@ class taskManager {
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
   }
+
+  static render(card, where) {
+    where.appendChild(card);
+  }
+
+  static saveToLocal(obj) {
+    localStorage.setItem(
+      "task",
+      JSON.stringify(obj)
+    );
+  }
+
+  static getAllTasks () {
+    return
+    JSON.parse(localStorage.getItem("task"));
 }
-export default taskManager
+//export default taskManager
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes
@@ -93,4 +109,4 @@ export default taskManager
 //this.setId(toGetName.length);   //to set the id | starting array length
 //toGetName.push(this);          //add the card info to start an array
 //localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-//}
+}
