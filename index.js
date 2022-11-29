@@ -1,4 +1,4 @@
-import TaskManager from "./Classes/TaskManager.js"
+import TaskManager from "./TaskManger/taskManger.js"
 window.addEventListener("load", function(){
   const name = event.target.Assignto.value
   const title = event.target.title.name
@@ -75,7 +75,7 @@ function validateForm(event){
    if (validateAssignTo => 1)
      return true
  }
- 
+
 // function DueDate (event) {
 //   if (DueDate < 0) (event)
 //   return false
