@@ -100,7 +100,7 @@ class taskManager {
     return
     JSON.parse(localStorage.getItem("task"));
 }
-//export default taskManager
+exporttaskManager () {
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes
@@ -109,4 +109,4 @@ class taskManager {
 //this.setId(toGetName.length);   //to set the id | starting array length
 //toGetName.push(this);          //add the card info to start an array
 //localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-}
+}}
