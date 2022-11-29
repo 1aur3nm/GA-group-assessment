@@ -8,6 +8,95 @@
 // Array
 // function TaskHTML (displayCards)
 
+ Create-Class-add-tasks-programatically
+class TaskManager {
+  static taskList = [];
+  static id = 0;
+  // the objects "setup" | Makes and returns objects
+  constructor(name, description, assign, calendar, status) {
+    this._name = name;
+    this._description = description;
+    this._assign = assign;
+    this._calendar = calendar;
+    this._status = status;
+    this._id = TaskManager.id++;
+  }
+
+  ////Getters
+  getName() {
+    return this._name;
+  }
+
+  getDescription() {
+    return this._description;
+  }
+
+  getAssign() {
+    return this._assign;
+  }
+
+  getCalendar() {
+    return this._calendar;
+  }
+
+  getStatus() {
+    return this._status;
+  }
+
+  getId() {
+    return this._id;
+  }
+
+  ////Setters
+  setName(newName) {
+    this._name = newName;
+  }
+
+  setDescription(newDescription) {
+    this._description = newDescription;
+  }
+
+  setAssign(newAssign) {
+    this._assign = newAssign;
+  }
+
+  setCalendar(newCalendar) {
+    this._calendar = newCalendar;
+  }
+
+  setStatus(newStatus) {
+    this._status = newStatus;
+  }
+
+  setId(newId) {
+    this._id = newId;
+  }
+
+  static createTaskHTML(obj, where) {
+    const card = document.createElement("div");
+    card.innerHTML = `<h4>${obj.name}</h4>
+                          <p>${obj.description}</p>
+                          <p>${obj.assign}</p>
+                          <p>${obj.calendar}</p>
+                          <p>${obj.status}</p>
+                          `;
+    TaskManager.render(card, where);
+  }
+
+  static getAllTasks() {
+    return JSON.parse(localStorage.getItem("tasks"));
+  }
+
+  static render(card, where) {
+    where.appendChild(card);
+  }
+
+  static saveToLocal(obj) {}
+}
+
+export default TaskManager;
+//console.log(taskManager.name);
+=======
 
 
 
@@ -97,3 +186,4 @@ class TaskManager {
 
 export default TaskManager;
 //console.log(taskManager.name);
+ main
