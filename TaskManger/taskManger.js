@@ -64,13 +64,9 @@ class taskManager {
   setId(newId) {
     this._id = newId;
   }
+
+
+  
 }
 //console.log(taskManager.name);
 
-////To swich from the cards orginal status and make changes
-//switch (this._nameOfTask){
-//case "toGetName";
-//this.setId(toGetName.length);   //to set the id | starting array length
-//toGetName.push(this);          //add the card info to start an array
-//localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-//}
