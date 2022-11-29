@@ -1,4 +1,4 @@
-import TaskManager from "./TaskManger/taskManger.js"
+import TaskManager from "./TaskManager/taskManager.js"
 window.addEventListener("load", function(){
  
   const modalForm = document.getElementById("modalForm");
