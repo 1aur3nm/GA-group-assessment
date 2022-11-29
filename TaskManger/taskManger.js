@@ -15,7 +15,6 @@ class taskManager {
     this._id = 0;
   }
 
-
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
   }
@@ -82,6 +81,12 @@ class taskManager {
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
   }
+  
+  static render(card, where) {
+    where.appendChild(card);
+  }
+
+  static saveToLocal(obj) {}
 }
 //console.log(taskManager.name);
 
