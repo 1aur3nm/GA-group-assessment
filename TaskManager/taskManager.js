@@ -89,23 +89,18 @@ class taskManager {
     where.appendChild(card);
   }
 
-  ////Local Stoage:
   static saveToLocal(obj) {
     localStorage.setItem(
       "task",
       JSON.stringify(obj)
     );
   }
-  
-  static getAllTasks() {
-    return JSON.parse(localStorage.getItem("task"))
-  }
 
-  ////Will remove anything in storage
-  static removeTasks(){
-    localStorage.removeItem("tasks"[obj])
-  }
-//export default taskManager
+  static getAllTasks () {
+    return
+    JSON.parse(localStorage.getItem("task"));
+}
+exporttaskManager () {
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes
@@ -113,5 +108,5 @@ class taskManager {
 //case "toGetName";
 //this.setId(toGetName.length);   //to set the id | starting array length
 //toGetName.push(this);          //add the card info to start an array
-//localStorage.setItem("toGetName" JSON.stringify(toGetName));
-
+//localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
+}}
