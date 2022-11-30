@@ -4,7 +4,7 @@
 
 // class name: taskManager
 
-class taskManager {
+class TaskManager {
   static taskList = [];
   // the objects "setup" | Makes and returns objects
   constructor(nameOfTask, desription, assign, calendar, status) {
@@ -100,7 +100,7 @@ class taskManager {
     return
     JSON.parse(localStorage.getItem("task"));
 }
-exporttaskManager () {
+
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes
@@ -109,4 +109,6 @@ exporttaskManager () {
 //this.setId(toGetName.length);   //to set the id | starting array length
 //toGetName.push(this);          //add the card info to start an array
 //localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-}}
+}
+export default TaskManager
+

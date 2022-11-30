@@ -1,4 +1,4 @@
-import TaskManager from "./TaskManger/taskManger.js"
+import TaskManager from "./TaskManager/taskManager.js"
 window.addEventListener("load", function(){
  
   const modalForm = document.getElementById("modalForm");
@@ -29,16 +29,19 @@ function validateTaskForm (event) {
   event.preventDefault()
   if (validateForm(event)){saveChanges(event)
   }
-  else return Error
+  //else return Error
 }
 
 
   function saveChanges(event){
-    const name = event.target.Assignto.value
-    const title = event.target.title.name
-    const task = new TaskManager(title, name)
+    const nameOfTask = event.target.name.value
+    const assign = event.target.AssignTo.value
+    const description = event.target.description.value
+    const calendar = event.target.date.value
+    const status = event.target.status.value
+    const task = new TaskManager(nameOfTask, description, assign, calendar, status)
     TaskManager.saveToLocal(task)
-    getElementById("saveButton")
+
   }
 
 
@@ -64,9 +67,9 @@ function validateForm(event){
   if (!validateAssignTo(event)){
     return false
   }
-  //if (!DueDate(event)){
-  //  return false
- // }
+  if (!DueDate(event)){
+    return false
+  }
 
   return true
 }
@@ -80,28 +83,26 @@ function validateForm(event){
   }
 
  function validateAssignTo(event) {
-   if (!event.target.validateAssignTo.value.length > 0)
-     {return false}
-    alert("Task must be Assigned")
-
-   if (validateAssignTo => 1)
+   if (!event.target.AssignTo.value.length > 0)
+     { alert("Task must be Assigned")
+     return false
+     }
      return true
  }
 
  function DueDate (event) {
-  {
-    (day, month, year)
-        var regd = new RegExp("^([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})\$");
-        var date = month + "/" + day + "/" + year;
-        var date = new Date(date);
-        var today = new Date();
-        var vdob = regd.test(date);
-        if(date.getDate() != day || (date.getTime()>today.getTime()))
-        {
-                alert("Please select a valid Date.")
-       return false}
-     return true
- }}
+ const validateDueDate = event.target.date.value
+
+  const currentDate = new Date().toJSON().slice(0,10);
+  if(validateDueDate.length === 0){
+    alert("Due date can't be empty!");
+    return false
+  }
+  if(validateDueDate < currentDate){
+    alert("Date Must Be In The Future!");
+    return false
+  } return true
+  }
 
 
 //// Time and date
