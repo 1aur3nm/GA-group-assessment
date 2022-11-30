@@ -6,27 +6,24 @@
 
 class TaskManager {
   static taskList = [];
+  static id = 0;
   // the objects "setup" | Makes and returns objects
-  constructor(nameOfTask, desription, assign, calendar, status) {
+  constructor(nameOfTask, description, assign, calendar, status) {
     this._nameOfTask = nameOfTask;
-    this._desription = desription;
+    this._desription = description;
     this._assign = assign;
     this._calendar = calendar;
     this._status = status;
-    this._id = 0;
+    this._id = TaskManager.id++;
   }
 
-
-  static getAllTasks() {
-    return JSON.parse(localStorage.getItem("tasks"));
-  }
   ////Getters
   getNameOfTask() {
     return this._nameOfTask;
   }
 
-  getDesription() {
-    return this._desription;
+  getDescription() {
+    return this._description;
   }
 
   geAssign() {
@@ -50,8 +47,8 @@ class TaskManager {
     this._name = newTaskName;
   }
 
-  setDesription(newDesription) {
-    this._desription = newDesription;
+  setDesription(newDescription) {
+    this._desription = newDescription;
   }
 
   setAssign(newAssign) {
@@ -87,14 +84,15 @@ class TaskManager {
   }
 
   static saveToLocal(obj) {
-    localStorage.setItem(
-      "task",
-      JSON.stringify(obj)
-    );
+    localStorage.setItem("task", JSON.stringify(obj));
   }
 
 
 
+  static removeTasks(obj) {
+    localStorage.removeItem("task"[obj]);
+  }
+}
 //console.log(taskManager.name);
 
 ////To swich from the cards orginal status and make changes
@@ -103,6 +101,5 @@ class TaskManager {
 //this.setId(toGetName.length);   //to set the id | starting array length
 //toGetName.push(this);          //add the card info to start an array
 //localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-}
-export default TaskManager
 
+export default TaskManager;
