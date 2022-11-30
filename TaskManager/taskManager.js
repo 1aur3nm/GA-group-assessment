@@ -16,7 +16,6 @@ class taskManager {
     this._id = 0;
   }
 
-
   static getAllTasks() {
     return JSON.parse(localStorage.getItem("tasks"));
   }
@@ -90,23 +89,24 @@ class taskManager {
   }
 
   static saveToLocal(obj) {
-    localStorage.setItem(
-      "task",
-      JSON.stringify(obj)
-    );
+    localStorage.setItem("task", JSON.stringify(obj));
   }
 
-  static getAllTasks () {
-    return
-    JSON.parse(localStorage.getItem("task"));
-}
-exporttaskManager () {
-//console.log(taskManager.name);
+  static getAllTasks() {
+    return JSON.parse(localStorage.getItem("task"));
+  }
 
-////To swich from the cards orginal status and make changes
-//switch (this._nameOfTask){
-//case "toGetName";
-//this.setId(toGetName.length);   //to set the id | starting array length
-//toGetName.push(this);          //add the card info to start an array
-//localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
-}}
+  static removeTasks(obj) {
+    localStorage.removeItem("task"[obj]);
+  }
+
+  //console.log(taskManager.name);
+
+  ////To swich from the cards orginal status and make changes
+  //switch (this._nameOfTask){
+  //case "toGetName";
+  //this.setId(toGetName.length);   //to set the id | starting array length
+  //toGetName.push(this);          //add the card info to start an array
+  //localStorage.setItem("toGetName" JSON.stringify(toGetName));  //added to local
+}
+export default TaskManager

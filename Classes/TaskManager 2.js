@@ -3,12 +3,8 @@
 ////Add an id attribute to the content list group created in sprint 1 and write the code to add the card to your HTML element
 
 // class name: taskManager
-// localStorage.getitem(getAllTasks)
-// JSON.parse
-// Array
-// function TaskHTML (displayCards)
 
- Create-Class-add-tasks-programatically
+ //Create-Class-add-tasks-programatically
 class TaskManager {
   static taskList = [];
   static id = 0;
