@@ -1,183 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cards</title>
-    <link rel="stylesheet" href="./stylecss/cards.css">
-</head>
-<body>
-    <div class="form-group">
-        <label for="taskName">Name</label>
-        <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name">
-    </div>
-       <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-    </div>
-        <div class="input-group mb-3">
-         <div class="input-group-prepend">
-        <label class="input-group-text" for="assigned">Assigned To</label>
-   </div>
-               <select class="custom-select" id="assigned">
-                <option selected>Choose...</option>
-                <option value="1">Norman Philipp</option>
-               <option value="2">Lauren Bulley</option>
-               </select>
-   </div>
-           <div class="form-group">
-           <label for="dueDate">Due Date</label>
-            <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="select due date">
-            </div>
-           <div class="form-group">
-            <label for="dueDate">Status</label>
+<ul id="card-container" class="list-group">
+    <!-- Card container -->
 
-             <select class="form-control form-control-lg">
-             <option value="Todo">Todo</option>
-             <option value="InProgress">In Progress</option>
-             <option value="review">Review</option>
-            <option value="done">Done</option>
-           </select>
-    </div>
-           <button type="button" class="btn btn-primary">Save Task</button>
-            <button type="reset" class="btn btn-primary">Clear</button>
-            <div class="form-group">
-                <label for="taskName">Name</label>
-                <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name">
-            </div>
-               <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-            </div>
-                <div class="input-group mb-3">
-                 <div class="input-group-prepend">
-                <label class="input-group-text" for="assigned">Assigned To</label>
-           </div>
-                       <select class="custom-select" id="assigned">
-                        <option selected>Choose...</option>
-                        <option value="1">Norman Philipp</option>
-                       <option value="2">Lauren Bulley</option>
-                       </select>
-           </div>
-                   <div class="form-group">
-                   <label for="dueDate">Due Date</label>
-                    <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="select due date">
-                    </div>
-                   <div class="form-group">
-                    <label for="dueDate">Status</label>
-        
-                     <select class="form-control form-control-lg">
-                     <option value="Todo">Todo</option>
-                     <option value="InProgress">In Progress</option>
-                     <option value="review">Review</option>
-                    <option value="done">Done</option>
-                   </select>
-            </div>
-                   <button type="button" class="btn btn-primary">Save Task</button>
-                    <button type="reset" class="btn btn-primary">Clear</button>
-                    <div class="form-group">
-                        <label for="taskName">Name</label>
-                        <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name">
-                    </div>
-                       <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                    </div>
-                        <div class="input-group mb-3">
-                         <div class="input-group-prepend">
-                        <label class="input-group-text" for="assigned">Assigned To</label>
-                   </div>
-                               <select class="custom-select" id="assigned">
-                                <option selected>Choose...</option>
-                                <option value="1">Norman Philipp</option>
-                               <option value="2">Lauren Bulley</option>
-                               </select>
-                   </div>
-                           <div class="form-group">
-                           <label for="dueDate">Due Date</label>
-                            <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="select due date">
-                            </div>
-                           <div class="form-group">
-                            <label for="dueDate">Status</label>
-                
-                             <select class="form-control form-control-lg">
-                             <option value="Todo">Todo</option>
-                             <option value="InProgress">In Progress</option>
-                             <option value="review">Review</option>
-                            <option value="done">Done</option>
-                           </select>
-                    </div>
-                           <button type="button" class="btn btn-primary">Save Task</button>
-                            <button type="reset" class="btn btn-primary">Clear</button>
-                            <div class="form-group">
-                                <label for="taskName">Name</label>
-                                <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name">
-                            </div>
-                               <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                            </div>
-                                <div class="input-group mb-3">
-                                 <div class="input-group-prepend">
-                                <label class="input-group-text" for="assigned">Assigned To</label>
-                           </div>
-                                       <select class="custom-select" id="assigned">
-                                        <option selected>Choose...</option>
-                                        <option value="1">Norman Philipp</option>
-                                       <option value="2">Lauren Bulley</option>
-                                       </select>
-                           </div>
-                                   <div class="form-group">
-                                   <label for="dueDate">Due Date</label>
-                                    <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="select due date">
-                                    </div>
-                                   <div class="form-group">
-                                    <label for="dueDate">Status</label>
-                        
-                                     <select class="form-control form-control-lg">
-                                     <option value="Todo">Todo</option>
-                                     <option value="InProgress">In Progress</option>
-                                     <option value="review">Review</option>
-                                    <option value="done">Done</option>
-                                   </select>
-                            </div>
-                                   <button type="button" class="btn btn-primary">Save Task</button>
-                                    <button type="reset" class="btn btn-primary">Clear</button>
-                                    <div class="form-group">
-                                        <label for="taskName">Name</label>
-                                        <input type="text" class="form-control" id="taskName" name="taskName" placeholder="Task Name">
-                                    </div>
-                                       <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                                    </div>
-                                        <div class="input-group mb-3">
-                                         <div class="input-group-prepend">
-                                        <label class="input-group-text" for="assigned">Assigned To</label>
-                                   </div>
-                                               <select class="custom-select" id="assigned">
-                                                <option selected>Choose...</option>
-                                                <option value="1">Norman Philipp</option>
-                                               <option value="2">Lauren Bulley</option>
-                                               </select>
-                                   </div>
-                                           <div class="form-group">
-                                           <label for="dueDate">Due Date</label>
-                                            <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="select due date">
-                                            </div>
-                                           <div class="form-group">
-                                            <label for="dueDate">Status</label>
-                                
-                                             <select class="form-control form-control-lg">
-                                             <option value="Todo">Todo</option>
-                                             <option value="InProgress">In Progress</option>
-                                             <option value="review">Review</option>
-                                            <option value="done">Done</option>
-                                           </select>
-                                    </div>
-                                           <button type="button" class="btn btn-primary">Save Task</button>
-                                            <button type="reset" class="btn btn-primary">Clear</button>
 
-</body>
-</html>
+    <li class="list-group-item">
+        <!-- card wrapper -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-status">Status</h2>
+            </div>
+            <div class="card-body">
+                <h2 class="card-name">Task Name</h2>
+                <p class="card-description">Description</p>
+            </div>
+            <div class="card-footer">
+                <p class="card-assign">Assigned To</p>
+                <p class="due-date">Due Date</p>
+            </div>
+            <button onclick="DeleteCard()" id="Delete">Delete</button>
+        </div>
+    </li> <!-- End card wrapper -->
+
+
+</ul> <!-- End container -->

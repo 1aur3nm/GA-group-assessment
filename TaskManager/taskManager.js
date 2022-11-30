@@ -10,15 +10,15 @@ class TaskManager {
   // the objects "setup" | Makes and returns objects
   constructor(nameOfTask, description, assign, calendar, status) {
     this._nameOfTask = nameOfTask;
-    this._desription = description;
+    this._description = description;
     this._assign = assign;
     this._calendar = calendar;
     this._status = status;
-    this._id = TaskManager.id++;
+    this._id = ++TaskManager.id;
   }
 
   ////Getters
-  getNameOfTask() {
+   getNameOfTask() {
     return this._nameOfTask;
   }
 
@@ -26,7 +26,7 @@ class TaskManager {
     return this._description;
   }
 
-  geAssign() {
+  getAssign() {
     return this._assign;
   }
 
@@ -38,17 +38,17 @@ class TaskManager {
     return this._status;
   }
 
-  geId() {
+  getId() {
     return this._id;
   }
 
   ////Setters
   setName(newTaskName) {
-    this._name = newTaskName;
+    this._nameOfTask = newTaskName;
   }
 
-  setDesription(newDescription) {
-    this._desription = newDescription;
+  setDescription(newDescription) {
+    this._description = newDescription;
   }
 
   setAssign(newAssign) {
@@ -68,13 +68,23 @@ class TaskManager {
   }
 
   static createTaskHTML(obj, where) {
-    const card = document.createElement("div");
-    card.innerHTML = `<h4>${obj.name}</h4>
-                          <p>${obj.description}</p>
-                          <p>${obj.assign}</p>
-                          <p>${obj.calendar}</p>
-                          <p>${obj.status}</p>
-                          `;
+    const card = document.createElement("li");
+    card.classList = "list-group-item"
+    card.innerHTML = `<div class="card">
+    <div class="card-header">
+        <h2 class="card-status">${obj._status}</h2>
+    </div>
+    <div class="card-body">
+        <h2 class="card-name">${obj._nameOfTask}</h2>
+        <p class="card-description">${obj._description}</p>
+    </div>
+    <div class="card-footer">
+        <p class="card-assign">${obj._assign}</p>
+        <p class="due-date">${obj._calendar}</p>
+    </div>
+    <button id="${obj._id}" class="btn-delete" >Delete</button>
+</div>`
+
     TaskManager.render(card, where);
   }
 
@@ -86,12 +96,16 @@ class TaskManager {
   static saveToLocal(obj) {
     localStorage.setItem("task", JSON.stringify(obj));
   }
-
-
-
-  static removeTasks(obj) {
-    localStorage.removeItem("task"[obj]);
+  static getAllTasks () {
+  const temp= JSON.parse (localStorage.getItem("task"))
+  if (temp != null && temp.length>0){
+    TaskManager.id=temp[temp.length-1]._id
   }
+  return temp
+  }
+
+  
+
 }
 //console.log(taskManager.name);
 

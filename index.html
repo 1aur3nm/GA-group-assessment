@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.js" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./Cards/stylecss/cards.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,7 +30,7 @@
         <li> <span id="dateAndTime"> ⏰ </span></li>
       </ul>
       </header>
-      
+
       <div id="digital-clock"></div>
       <!--Modal attempt-->
       <!-- Button trigger modal -->
@@ -66,14 +67,14 @@
                 <!--Name of task-->
                   <div class="form-group">
                     <label for="InputName">Name of task:</label>
-                    <input type="text" inputname="required"
+                    <input type="text" required
                       class="form-control"
                       id="InputName"
                       aria-describedby="enter name"
                       placeholder="Enter Name Of Task"
                       autocomplete="off"
                       style="width: 200px;"
-                      name="inputName"
+                      name="InputName"
                     />
                     <br />
                   </div>
@@ -130,59 +131,8 @@
     <br />
     <br>
     <!--Cards - need to add the content to cards-->
-    <div class="card-container">
-      <div class="row justify-content-start">
-        <div class="col">
-            <div class="card1 text-white bg-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">📝 Todo</div>
-                <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card2 text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">➡️ In Progress</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card3 text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">👀 Review</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card4 text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">✅ Done</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card5 text-white bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-              <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ul class="list-group" id="card-container">
+    </ul>
 
     <script type="module" src="./index.js"></script>
 
