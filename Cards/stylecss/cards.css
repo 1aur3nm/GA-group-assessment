@@ -2,3 +2,41 @@
     text-align: center;
     display:inline;
 }
+#card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centres cards horizontally */
+    padding: 2% 5%;
+    height: calc(100vh - 4rem);
+}
+
+#card-container li.list-group-item {
+    /* background-color: orange; */
+    border: none;
+    width: 20rem;
+    /* width: 20%; */
+    margin: 0;
+    margin-right: auto; /* Forces cards to left of screen */
+}
+
+#card-container .card {
+    /* background-color: orange; */
+    background-color: #0052ec;
+    color: white;
+    text-align: center;
+}
+
+.card-description {
+    height: 8rem;
+    overflow-y: auto;
+
+    margin: 0;
+}
+
+.card-footer .card-assign {
+    float: left;
+}
+
+.card-footer .due-date{
+    float: right;
+}

@@ -1,17 +1,41 @@
 import TaskManager from "./TaskManager/taskManager.js"
+function DeleteCard(TaskId){
+  TaskManager.removeTasks(TaskId)
+  displayCards()
+
+}
 window.addEventListener("load", function(){
- 
+ let taskList = TaskManager.getAllTasks()
+ taskList ??= []
+ displayCards()
   const modalForm = document.getElementById("modalForm");
   
   function displayCards(){
-    let tasks = TaskManager.getAllTasks()
-    const container = document.getElementById("container")
-    tasks.map(eachTask => {
+    const container = document.getElementById("card-container")
+    container.innerHTML=""
+    taskList.map(eachTask => {
       TaskManager.createTaskHTML(eachTask, container)
     })
   }
- // displayCards()
-
+  document.getElementById("card-container").addEventListener("click", (e) => {
+    
+    let element = e.target
+    if (element === e.currentTarget) {
+      return
+    }
+    if (element.nodeName === "BUTTON"&&element.className==="btn-delete") {
+    removeTasks(Number(element.id))
+    displayCards()
+    TaskManager.saveToLocal(taskList)
+    }
+ })
+ function removeTasks(id) {
+  for(let i=0;i<taskList.length;i++) {
+    if (taskList[i]._id===id){
+      taskList.splice(i,1)
+    } 
+  }
+  }
 
 
 //Drop Down Elements - Assigned To /  Status
@@ -34,14 +58,14 @@ function validateTaskForm (event) {
 
 
   function saveChanges(event){
-    const nameOfTask = event.target.name.value
+    const nameOfTask = event.target.InputName.value
     const assign = event.target.AssignTo.value
     const description = event.target.description.value
     const calendar = event.target.date.value
     const status = event.target.status.value
-    const task = new TaskManager(nameOfTask, description, assign, calendar, status)
-    TaskManager.saveToLocal(task)
-
+    taskList.push( new TaskManager(nameOfTask, description, assign, calendar, status))
+    TaskManager.saveToLocal(taskList)
+    displayCards()
   }
 
 
@@ -49,7 +73,7 @@ modalForm.addEventListener("submit", (event)=>validateTaskForm(event));
 
   ///Form Validation Code
 function validateName(event){
-  let name = event.target.inputName.value
+  let name = event.target.InputName.value
   if(name === "" || name.length < 4){
     alert("PUT IN A NAME !")
     return false
@@ -141,4 +165,5 @@ function formatDateAndTime() {
   document.querySelector("#dateAndTime").textContent = formatDateAndTime()
   // document.getElementById("dateAndTime").innerHTML = date
 })
+
 
