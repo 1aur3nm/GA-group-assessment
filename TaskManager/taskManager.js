@@ -78,9 +78,6 @@ class TaskManager {
     TaskManager.render(card, where);
   }
 
-  static getAllTasks() {
-    return JSON.parse(localStorage.getItem("tasks"));
-  }
 
   static render(card, where) {
     where.appendChild(card);
@@ -90,9 +87,7 @@ class TaskManager {
     localStorage.setItem("task", JSON.stringify(obj));
   }
 
-  static getAllTasks() {
-    return JSON.parse(localStorage.getItem("task"));
-  }
+
 
   static removeTasks(obj) {
     localStorage.removeItem("task"[obj]);
