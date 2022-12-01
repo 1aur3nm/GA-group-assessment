@@ -1,42 +1,50 @@
 *div {
-    text-align: center;
-    display:inline;
+  text-align: center;
+  display: inline;
 }
 #card-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; /* Centres cards horizontally */
-    padding: 2% 5%;
-    height: calc(100vh - 4rem);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* Centres cards horizontally */
+  padding: 2% 5%;
+  height: calc(100vh - 4rem);
 }
 
 #card-container li.list-group-item {
-    /* background-color: orange; */
-    border: none;
-    width: 20rem;
-    /* width: 20%; */
-    margin: 0;
-    margin-right: auto; /* Forces cards to left of screen */
+  background-color: #f0ebf5;
+  border: none;
+  width: 20rem;
+  /* width: 20%; */
+  margin: 0;
+  margin-right: auto; /* Forces cards to left of screen */
 }
 
 #card-container .card {
-    /* background-color: orange; */
-    background-color: #0052ec;
-    color: white;
-    text-align: center;
+  /* background-color: orange; */
+  box-shadow: 3px 3px 5px #db7808;
+  background-color: #ffb677;
+  color: white;
+  text-align: center;
+}
+
+.btn-delete {
+  background-color: #ef5a5a;
+  border-color: #ef5a5a;
+  border-radius: 5px;
+  box-shadow: 4px 4px 5px #a47a7a;
 }
 
 .card-description {
-    height: 8rem;
-    overflow-y: auto;
+  height: 8rem;
+  overflow-y: auto;
 
-    margin: 0;
+  margin: 0;
 }
 
 .card-footer .card-assign {
-    float: left;
+  float: left;
 }
 
-.card-footer .due-date{
-    float: right;
+.card-footer .due-date {
+  float: right;
 }

@@ -1,13 +1,22 @@
 .container {
-  margin: auto;
-  text-align: center;
+  background: #f0ebf5;
   color: rebeccapurple;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
 }
 
 .btn-group {
   flex-direction: column;
   content: center;
-  color: orange;
+  color: rgba(255, 166, 0, 0.992);
+}
+
+#newTaskButton {
+  background-color: #a75265;
+  border-color: #a75265;
+  box-shadow: 4px 4px 5px #8594e4;
 }
 
 #freeform {
@@ -21,6 +30,8 @@
 
 h1 {
   text-align: center;
+  padding-top: 35px;
+  margin: auto;
 }
 
 button {
@@ -30,38 +41,4 @@ button {
 li {
   list-style: none;
   text-align: center;
-}
-
-textarea {
-  width: auto;
-  display: flex;
-}
-
-div.form-control {
-  display: flex;
-  width: auto;
-  height: auto;
-  background-color: teal;
-}
-
-/* Cards */
-.card-container {
-  float: left;
-  gap: 10px;
-}
-
-.row {
-  color: violet;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.col {
-  display: inline-block;
-  float: left;
-}
-
-.card {
-  border-color: rgb(184, 144, 23);
-  float: left;
 }
